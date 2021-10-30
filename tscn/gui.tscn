@@ -1,0 +1,83 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://src/letras/FairyDustB.ttf" type="DynamicFontData" id=1]
+
+[sub_resource type="DynamicFont" id=1]
+size = 35
+outline_size = 1
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 1 )
+
+[node name="gui" type="CanvasLayer" groups=[
+"gui",
+]]
+
+[node name="textomonedas" type="Label" parent="."]
+margin_left = 23.5451
+margin_top = 15.977
+margin_right = 123.545
+margin_bottom = 51.977
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0.870588, 0.658824, 0.141176, 1 )
+custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
+custom_colors/font_color_shadow = Color( 0.870588, 0.329412, 0.0627451, 1 )
+custom_constants/shadow_offset_x = 1
+custom_constants/line_spacing = 0
+custom_constants/shadow_offset_y = 1
+text = "Tesoros"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="monedas" type="Label" parent="."]
+margin_left = 161.452
+margin_top = 20.1815
+margin_right = 271.452
+margin_bottom = 60.1815
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0.870588, 0.658824, 0.141176, 1 )
+custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
+custom_colors/font_color_shadow = Color( 0.870588, 0.329412, 0.0627451, 1 )
+custom_constants/shadow_offset_x = 1
+custom_constants/line_spacing = 0
+custom_constants/shadow_offset_y = 1
+text = "0"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="textovidas" type="Label" parent="."]
+visible = false
+margin_left = 265.545
+margin_top = 15.977
+margin_right = 375.545
+margin_bottom = 55.977
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0.870588, 0.658824, 0.141176, 1 )
+custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
+custom_colors/font_color_shadow = Color( 0.870588, 0.329412, 0.0627451, 1 )
+custom_constants/shadow_offset_x = 1
+custom_constants/line_spacing = 0
+custom_constants/shadow_offset_y = 1
+text = "Vidas"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="vidas" type="Label" parent="."]
+visible = false
+margin_left = 366.452
+margin_top = 20.1815
+margin_right = 476.452
+margin_bottom = 60.1815
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0.870588, 0.658824, 0.141176, 1 )
+custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
+custom_colors/font_color_shadow = Color( 0.870588, 0.329412, 0.0627451, 1 )
+custom_constants/shadow_offset_x = 1
+custom_constants/line_spacing = 0
+custom_constants/shadow_offset_y = 1
+text = "0"
+__meta__ = {
+"_edit_use_anchors_": false
+}

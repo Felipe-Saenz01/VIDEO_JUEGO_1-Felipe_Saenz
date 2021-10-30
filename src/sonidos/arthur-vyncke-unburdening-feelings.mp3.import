@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/arthur-vyncke-unburdening-feelings.mp3-ec40074d1d62e65898a7441bbd72c5cc.mp3str"
+
+[deps]
+
+source_file="res://src/sonidos/arthur-vyncke-unburdening-feelings.mp3"
+dest_files=[ "res://.import/arthur-vyncke-unburdening-feelings.mp3-ec40074d1d62e65898a7441bbd72c5cc.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

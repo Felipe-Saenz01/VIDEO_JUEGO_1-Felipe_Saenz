@@ -1,0 +1,31 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://tscn/escenario2.gd" type="Script" id=1]
+[ext_resource path="res://src/suelo/suelo1.tres" type="TileSet" id=2]
+[ext_resource path="res://tscn/vida.tscn" type="PackedScene" id=3]
+[ext_resource path="res://tscn/gui.tscn" type="PackedScene" id=4]
+[ext_resource path="res://personaje/personaje.tscn" type="PackedScene" id=5]
+[ext_resource path="res://src/BG.png" type="Texture" id=6]
+
+[node name="escenario2" type="Node2D" groups=[
+"main",
+]]
+script = ExtResource( 1 )
+vidax = ExtResource( 3 )
+
+[node name="personaje" parent="." instance=ExtResource( 5 )]
+
+[node name="gui" parent="." instance=ExtResource( 4 )]
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = ExtResource( 2 )
+format = 1
+tile_data = PoolIntArray( 327681, 1, 0, 327685, 0, 0, 327689, 0, 0, 327693, 0, 0, 327697, 0, 0, 327701, 0, 0, 327705, 2, 0 )
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2( 0, 0 )
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
+texture = ExtResource( 6 )

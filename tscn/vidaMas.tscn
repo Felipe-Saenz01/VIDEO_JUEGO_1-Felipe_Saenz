@@ -1,0 +1,32 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://src/heart_2.png" type="Texture" id=1]
+[ext_resource path="res://src/heart_PNG51122.png" type="Texture" id=2]
+[ext_resource path="res://tscn/vidaMas.gd" type="Script" id=3]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 2 ), ExtResource( 1 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 1327.24, 1123.51 )
+
+[node name="vidaMas" type="Area2D"]
+scale = Vector2( 0.02, 0.02 )
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+position = Vector2( 16.0181, 10.6787 )
+frames = SubResource( 1 )
+playing = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 0, 48.0542 )
+shape = SubResource( 2 )

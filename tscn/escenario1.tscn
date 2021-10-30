@@ -1,0 +1,90 @@
+[gd_scene load_steps=14 format=2]
+
+[ext_resource path="res://src/BG.png" type="Texture" id=1]
+[ext_resource path="res://personaje/personaje.tscn" type="PackedScene" id=2]
+[ext_resource path="res://tscn/moneda.tscn" type="PackedScene" id=3]
+[ext_resource path="res://src/suelo/suelo1.tres" type="TileSet" id=4]
+[ext_resource path="res://tscn/fuego.tscn" type="PackedScene" id=5]
+[ext_resource path="res://tscn/gui.tscn" type="PackedScene" id=6]
+[ext_resource path="res://tscn/escenario1.gd" type="Script" id=7]
+[ext_resource path="res://tscn/vida.tscn" type="PackedScene" id=8]
+[ext_resource path="res://tscn/vidaMas.tscn" type="PackedScene" id=9]
+[ext_resource path="res://tscn/portal.tscn" type="PackedScene" id=10]
+[ext_resource path="res://tscn/enemigo.tscn" type="PackedScene" id=11]
+[ext_resource path="res://src/sonidos/arthur-vyncke-unburdening-feelings.mp3" type="AudioStream" id=12]
+[ext_resource path="res://src/sonidos/yt1s.com - Efecto de Sonido Moneda .mp3" type="AudioStream" id=13]
+
+[node name="escenario1" type="Node2D" groups=[
+"main",
+]]
+script = ExtResource( 7 )
+vidax = ExtResource( 8 )
+
+[node name="personaje" parent="." instance=ExtResource( 2 )]
+position = Vector2( 444, 157 )
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = ExtResource( 4 )
+format = 1
+tile_data = PoolIntArray( -262121, 1, 0, -262117, 0, 0, -262113, 2, 0, 131107, 1, 0, 131111, 0, 0, 131115, 0, 0, 131119, 2, 0, 327743, 0, 0, 327765, 0, 0, 393217, 1, 0, 393221, 0, 0, 393225, 0, 0, 393229, 0, 0, 393233, 0, 0, 393237, 0, 0, 393241, 0, 0, 393245, 0, 0, 393249, 2, 0, 458800, 1, 0, 458804, 0, 0, 458808, 0, 0, 458812, 0, 0, 458816, 0, 0, 458820, 0, 0, 458824, 0, 0, 458828, 0, 0, 458832, 0, 0, 458836, 0, 0, 458840, 0, 0, 458844, 2, 0 )
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="CanvasLayer"]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="CanvasLayer/ParallaxBackground"]
+motion_scale = Vector2( 0, 0 )
+
+[node name="Sprite" type="Sprite" parent="CanvasLayer/ParallaxBackground/ParallaxLayer"]
+position = Vector2( -0.432701, 2.43683 )
+texture = ExtResource( 1 )
+
+[node name="gui" parent="." instance=ExtResource( 6 )]
+
+[node name="vidaMas" parent="." instance=ExtResource( 9 )]
+position = Vector2( 2568.19, 184.084 )
+
+[node name="portal" parent="." instance=ExtResource( 10 )]
+position = Vector2( 5973.68, 469.024 )
+siguiente_escena = "res://tscn/escenario2.tscn"
+
+[node name="ost" type="AudioStreamPlayer2D" parent="."]
+position = Vector2( 920.707, 138.591 )
+stream = ExtResource( 12 )
+autoplay = true
+
+[node name="sonidoMoneda" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 13 )
+
+[node name="Recompensas" type="Node" parent="."]
+
+[node name="moneda" parent="Recompensas" instance=ExtResource( 3 )]
+position = Vector2( 936.759, 348.131 )
+
+[node name="moneda1" parent="Recompensas" instance=ExtResource( 3 )]
+position = Vector2( 1302.72, 354.382 )
+
+[node name="moneda2" parent="Recompensas" instance=ExtResource( 3 )]
+position = Vector2( 1819.16, 358.753 )
+
+[node name="moneda3" parent="Recompensas" instance=ExtResource( 3 )]
+position = Vector2( 3387.51, 425.424 )
+
+[node name="moneda4" parent="Recompensas" instance=ExtResource( 3 )]
+position = Vector2( 3955.8, 415.899 )
+
+[node name="Trampas" type="Node" parent="."]
+
+[node name="fuego" parent="Trampas" instance=ExtResource( 5 )]
+position = Vector2( 2223.31, 444.816 )
+
+[node name="fuego2" parent="Trampas" instance=ExtResource( 5 )]
+position = Vector2( 2758.55, 187.405 )
+
+[node name="Enemigos" type="Node" parent="."]
+
+[node name="enemigo" parent="Enemigos" instance=ExtResource( 11 )]
+position = Vector2( 1590.77, 147.867 )
+
+[node name="enemigo2" parent="Enemigos" instance=ExtResource( 11 )]
+position = Vector2( 4474.02, 115.831 )
