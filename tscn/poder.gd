@@ -9,10 +9,7 @@ var direccion=1
 func _physics_process(delta):
 	mov.x=velocidad*direccion*delta
 	translate(mov)
-	if direccion==1:
-		$Sprite.flip_h=false
-	else:
-		$Sprite.flip_h=true
+	
 
 func _on_VisibilityNotifier2D_screen_exited():
 	queue_free()
@@ -25,5 +22,8 @@ func _on_poder_body_entered(body):
 		
 		
 func direccionBala(dir):
-	#print(direccion)
 	direccion=dir
+	if direccion==1:
+		$Sprite.flip_h=false
+	else:
+		$Sprite.flip_h=true

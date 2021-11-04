@@ -48,12 +48,13 @@ position = Vector2( 2568.19, 184.084 )
 position = Vector2( 5973.68, 469.024 )
 siguiente_escena = "res://tscn/escenario2.tscn"
 
-[node name="ost" type="AudioStreamPlayer2D" parent="."]
-position = Vector2( 920.707, 138.591 )
+[node name="ost" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 12 )
 autoplay = true
 
-[node name="sonidoMoneda" type="AudioStreamPlayer2D" parent="."]
+[node name="sonidomoneda" type="AudioStreamPlayer" parent="." groups=[
+"monedafx",
+]]
 stream = ExtResource( 13 )
 
 [node name="Recompensas" type="Node" parent="."]

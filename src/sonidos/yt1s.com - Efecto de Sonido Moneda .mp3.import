@@ -11,5 +11,5 @@ dest_files=[ "res://.import/yt1s.com - Efecto de Sonido Moneda .mp3-d12a8360587e
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0
