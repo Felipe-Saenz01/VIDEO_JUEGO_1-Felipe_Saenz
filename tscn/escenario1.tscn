@@ -1,9 +1,9 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://src/BG.png" type="Texture" id=1]
 [ext_resource path="res://personaje/personaje.tscn" type="PackedScene" id=2]
 [ext_resource path="res://tscn/moneda.tscn" type="PackedScene" id=3]
-[ext_resource path="res://src/suelo/suelo1.tres" type="TileSet" id=4]
+[ext_resource path="res://src/elementos_decoracion/avisoRecompensas.png" type="Texture" id=4]
 [ext_resource path="res://tscn/fuego.tscn" type="PackedScene" id=5]
 [ext_resource path="res://tscn/gui.tscn" type="PackedScene" id=6]
 [ext_resource path="res://tscn/escenario1.gd" type="Script" id=7]
@@ -13,6 +13,12 @@
 [ext_resource path="res://tscn/enemigo.tscn" type="PackedScene" id=11]
 [ext_resource path="res://src/sonidos/arthur-vyncke-unburdening-feelings.mp3" type="AudioStream" id=12]
 [ext_resource path="res://src/sonidos/yt1s.com - Efecto de Sonido Moneda .mp3" type="AudioStream" id=13]
+[ext_resource path="res://src/elementos_decoracion/avisoMovimientoLateral.png" type="Texture" id=14]
+[ext_resource path="res://src/suelo/suelo2/suelo2.tres" type="TileSet" id=15]
+[ext_resource path="res://src/elementos_decoracion/avisoPortal.png" type="Texture" id=16]
+[ext_resource path="res://src/elementos_decoracion/avisoMovimientodeSalto.png" type="Texture" id=17]
+[ext_resource path="res://src/elementos_decoracion/avisoMonstruos.png" type="Texture" id=18]
+[ext_resource path="res://src/elementos_decoracion/avisoAtacar.png" type="Texture" id=19]
 
 [node name="escenario1" type="Node2D" groups=[
 "main",
@@ -20,32 +26,65 @@
 script = ExtResource( 7 )
 vidax = ExtResource( 8 )
 
-[node name="personaje" parent="." instance=ExtResource( 2 )]
-position = Vector2( 444, 157 )
-
-[node name="TileMap" type="TileMap" parent="."]
-tile_set = ExtResource( 4 )
-format = 1
-tile_data = PoolIntArray( -262121, 1, 0, -262117, 0, 0, -262113, 2, 0, 131107, 1, 0, 131111, 0, 0, 131115, 0, 0, 131119, 2, 0, 327743, 0, 0, 327765, 0, 0, 393217, 1, 0, 393221, 0, 0, 393225, 0, 0, 393229, 0, 0, 393233, 0, 0, 393237, 0, 0, 393241, 0, 0, 393245, 0, 0, 393249, 2, 0, 458800, 1, 0, 458804, 0, 0, 458808, 0, 0, 458812, 0, 0, 458816, 0, 0, 458820, 0, 0, 458824, 0, 0, 458828, 0, 0, 458832, 0, 0, 458836, 0, 0, 458840, 0, 0, 458844, 2, 0 )
-
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="CanvasLayer"]
 
-[node name="ParallaxLayer" type="ParallaxLayer" parent="CanvasLayer/ParallaxBackground"]
+[node name="Fondo" type="ParallaxLayer" parent="CanvasLayer/ParallaxBackground"]
 motion_scale = Vector2( 0, 0 )
 
-[node name="Sprite" type="Sprite" parent="CanvasLayer/ParallaxBackground/ParallaxLayer"]
+[node name="Sprite" type="Sprite" parent="CanvasLayer/ParallaxBackground/Fondo"]
 position = Vector2( -0.432701, 2.43683 )
 texture = ExtResource( 1 )
 
+[node name="AvisoMovL" type="ParallaxLayer" parent="CanvasLayer/ParallaxBackground"]
+
+[node name="Sprite" type="Sprite" parent="CanvasLayer/ParallaxBackground/AvisoMovL"]
+position = Vector2( 603.189, 406.453 )
+texture = ExtResource( 14 )
+
+[node name="AvisoMovS" type="ParallaxLayer" parent="CanvasLayer/ParallaxBackground"]
+
+[node name="Sprite" type="Sprite" parent="CanvasLayer/ParallaxBackground/AvisoMovS"]
+position = Vector2( 2065.21, 403.456 )
+texture = ExtResource( 17 )
+
+[node name="AvisoRecompensa" type="ParallaxLayer" parent="CanvasLayer/ParallaxBackground"]
+
+[node name="Sprite" type="Sprite" parent="CanvasLayer/ParallaxBackground/AvisoRecompensa"]
+position = Vector2( 2974.2, 144.818 )
+texture = ExtResource( 4 )
+
+[node name="AvisoMonstruo" type="ParallaxLayer" parent="CanvasLayer/ParallaxBackground"]
+
+[node name="Sprite" type="Sprite" parent="CanvasLayer/ParallaxBackground/AvisoMonstruo"]
+position = Vector2( 4522.96, 142.342 )
+texture = ExtResource( 18 )
+
+[node name="AivisoAtaque" type="ParallaxLayer" parent="CanvasLayer/ParallaxBackground"]
+
+[node name="Sprite" type="Sprite" parent="CanvasLayer/ParallaxBackground/AivisoAtaque"]
+position = Vector2( 5402.97, 420.713 )
+texture = ExtResource( 19 )
+
+[node name="AivisoPortal" type="ParallaxLayer" parent="CanvasLayer/ParallaxBackground"]
+
+[node name="Sprite" type="Sprite" parent="CanvasLayer/ParallaxBackground/AivisoPortal"]
+position = Vector2( 7606.23, 277.693 )
+texture = ExtResource( 16 )
+
+[node name="personaje" parent="." instance=ExtResource( 2 )]
+position = Vector2( 291.37, 238.027 )
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = ExtResource( 15 )
+format = 1
+tile_data = PoolIntArray( 262186, 0, 0, 262188, 1, 0, 262190, 9, 0, 262192, 10, 0, 262194, 10, 0, 262196, 10, 0, 262198, 10, 0, 262200, 10, 0, 262202, 10, 0, 262204, 10, 0, 262206, 10, 0, 262208, 10, 0, 262210, 10, 0, 262212, 10, 0, 262214, 11, 0, 262216, 2, 0, 393256, 3, 0, 393258, 4, 0, 393260, 5, 0, 393262, 5, 0, 393264, 5, 0, 393266, 5, 0, 393268, 5, 0, 393270, 5, 0, 393272, 5, 0, 393274, 5, 0, 393276, 5, 0, 393278, 5, 0, 393280, 5, 0, 393282, 5, 0, 393284, 5, 0, 393286, 5, 0, 393288, 6, 0, 393290, 2, 0, 393333, 3, 0, 393335, 9, 0, 393337, 10, 0, 393339, 10, 0, 393341, 10, 0, 393343, 10, 0, 393345, 10, 0, 393347, 11, 0, 393349, 7, 0, 458806, 5, 0, 589820, 3, 0, 589822, 1, 0, 524288, 9, 0, 524290, 10, 0, 524291, 10, 0, 524292, 10, 0, 524293, 10, 0, 524294, 10, 0, 524295, 10, 0, 524296, 10, 0, 524297, 10, 0, 524298, 10, 0, 524300, 10, 0, 524301, 10, 0, 524302, 10, 0, 524303, 10, 0, 524304, 10, 0, 524305, 10, 0, 524307, 10, 0, 524308, 10, 0, 524309, 10, 0, 524310, 10, 0, 524311, 10, 0, 524312, 10, 0, 524313, 10, 0, 524314, 10, 0, 524315, 10, 0, 524316, 10, 0, 524318, 10, 0, 524320, 11, 0, 524322, 7, 0, 524328, 8, 0, 524330, 5, 0, 524332, 5, 0, 524334, 5, 0, 524336, 5, 0, 524338, 5, 0, 524340, 5, 0, 524342, 5, 0, 524344, 5, 0, 524346, 5, 0, 524348, 5, 0, 524350, 5, 0, 524352, 5, 0, 524354, 5, 0, 524356, 5, 0, 524358, 5, 0, 524360, 5, 0, 524362, 6, 0, 524364, 7, 0, 524370, 3, 0, 524372, 9, 0, 524374, 10, 0, 524376, 10, 0, 524378, 10, 0, 524380, 10, 0, 524382, 10, 0, 524384, 10, 0, 524386, 10, 0, 524388, 10, 0, 524390, 10, 0, 524392, 10, 0, 524394, 10, 0, 524396, 10, 0, 524398, 11, 0, 524400, 7, 0, 524405, 8, 0, 524407, 5, 0, 524409, 5, 0, 524411, 5, 0, 524413, 5, 0, 524415, 5, 0, 524417, 5, 0, 524419, 5, 0, 524421, 12, 0, 720892, 8, 0, 720894, 5, 0, 720895, 5, 0, 655361, 5, 0, 655362, 5, 0, 655363, 5, 0, 655365, 5, 0, 655366, 5, 0, 655367, 5, 0, 655368, 5, 0, 655369, 5, 0, 655370, 5, 0, 655372, 5, 0, 655373, 5, 0, 655374, 5, 0, 655375, 5, 0, 655376, 5, 0, 655377, 5, 0, 655378, 5, 0, 655379, 5, 0, 655380, 5, 0, 655381, 5, 0, 655382, 5, 0, 655383, 5, 0, 655384, 5, 0, 655385, 5, 0, 655386, 5, 0, 655387, 5, 0, 655388, 5, 0, 655390, 5, 0, 655392, 5, 0, 655394, 12, 0, 655400, 8, 0, 655402, 5, 0, 655404, 5, 0, 655406, 5, 0, 655408, 5, 0, 655410, 5, 0, 655412, 5, 0, 655414, 5, 0, 655416, 5, 0, 655418, 5, 0, 655420, 5, 0, 655422, 5, 0, 655424, 5, 0, 655426, 5, 0, 655428, 5, 0, 655430, 5, 0, 655432, 5, 0, 655434, 5, 0, 655436, 12, 0, 655442, 8, 0, 655444, 5, 0, 655446, 5, 0, 655448, 5, 0, 655450, 5, 0, 655452, 5, 0, 655454, 5, 0, 655456, 5, 0, 655458, 5, 0, 655460, 5, 0, 655462, 5, 0, 655464, 5, 0, 655466, 5, 0, 655468, 5, 0, 655470, 5, 0, 655472, 12, 0, 655477, 8, 0, 655479, 5, 0, 655481, 5, 0, 655483, 5, 0, 655485, 5, 0, 655487, 5, 0, 655489, 5, 0, 655491, 5, 0, 655493, 12, 0 )
+
 [node name="gui" parent="." instance=ExtResource( 6 )]
 
-[node name="vidaMas" parent="." instance=ExtResource( 9 )]
-position = Vector2( 2568.19, 184.084 )
-
 [node name="portal" parent="." instance=ExtResource( 10 )]
-position = Vector2( 5973.68, 469.024 )
+position = Vector2( 8552.18, 306.705 )
 siguiente_escena = "res://tscn/escenario2.tscn"
 
 [node name="ost" type="AudioStreamPlayer" parent="."]
@@ -60,32 +99,35 @@ stream = ExtResource( 13 )
 [node name="Recompensas" type="Node" parent="."]
 
 [node name="moneda" parent="Recompensas" instance=ExtResource( 3 )]
-position = Vector2( 936.759, 348.131 )
+position = Vector2( 3497.75, 199.282 )
 
 [node name="moneda1" parent="Recompensas" instance=ExtResource( 3 )]
-position = Vector2( 1302.72, 354.382 )
+position = Vector2( 3894.05, 193.38 )
 
 [node name="moneda2" parent="Recompensas" instance=ExtResource( 3 )]
-position = Vector2( 1819.16, 358.753 )
+position = Vector2( 4184.12, 202.017 )
 
 [node name="moneda3" parent="Recompensas" instance=ExtResource( 3 )]
-position = Vector2( 3387.51, 425.424 )
+position = Vector2( 7849.17, 280.61 )
 
-[node name="moneda4" parent="Recompensas" instance=ExtResource( 3 )]
-position = Vector2( 3955.8, 415.899 )
+[node name="vidaMas" parent="Recompensas" instance=ExtResource( 9 )]
+position = Vector2( 3343.91, 195.41 )
+
+[node name="vidaMas2" parent="Recompensas" instance=ExtResource( 9 )]
+position = Vector2( 8344.22, 279.403 )
 
 [node name="Trampas" type="Node" parent="."]
 
 [node name="fuego" parent="Trampas" instance=ExtResource( 5 )]
-position = Vector2( 2223.31, 444.816 )
+position = Vector2( 2271.31, 462.816 )
 
 [node name="fuego2" parent="Trampas" instance=ExtResource( 5 )]
-position = Vector2( 2758.55, 187.405 )
+position = Vector2( 3706.82, 209.388 )
 
 [node name="Enemigos" type="Node" parent="."]
 
 [node name="enemigo" parent="Enemigos" instance=ExtResource( 11 )]
-position = Vector2( 1590.77, 147.867 )
+position = Vector2( 6513.6, 364.764 )
 
 [node name="enemigo2" parent="Enemigos" instance=ExtResource( 11 )]
-position = Vector2( 4474.02, 115.831 )
+position = Vector2( 7068.98, 370.369 )

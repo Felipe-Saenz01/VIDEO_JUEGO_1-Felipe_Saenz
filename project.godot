@@ -10,9 +10,13 @@ config_version=4
 
 [application]
 
-config/name="Juego Felipe Saenz"
-run/main_scene="res://tscn/escenario1.tscn"
+config/name="VideoJuego"
+run/main_scene="res://tscn/Start.tscn"
 config/icon="res://icon.png"
+
+[display]
+
+window/size/resizable=false
 
 [input]
 
