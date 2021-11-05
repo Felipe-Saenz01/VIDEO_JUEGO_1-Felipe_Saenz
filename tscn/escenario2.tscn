@@ -1,17 +1,33 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://tscn/escenario2.gd" type="Script" id=1]
-[ext_resource path="res://src/suelo/suelo1.tres" type="TileSet" id=2]
+[ext_resource path="res://src/suelo/suelo2/suelo2.tres" type="TileSet" id=2]
 [ext_resource path="res://tscn/vida.tscn" type="PackedScene" id=3]
 [ext_resource path="res://tscn/gui.tscn" type="PackedScene" id=4]
 [ext_resource path="res://personaje/personaje.tscn" type="PackedScene" id=5]
 [ext_resource path="res://src/BG.png" type="Texture" id=6]
+[ext_resource path="res://tscn/portal.tscn" type="PackedScene" id=7]
+[ext_resource path="res://tscn/enemigo.tscn" type="PackedScene" id=8]
+[ext_resource path="res://tscn/moneda.tscn" type="PackedScene" id=9]
+[ext_resource path="res://tscn/fuego.tscn" type="PackedScene" id=10]
+[ext_resource path="res://tscn/vidaMas.tscn" type="PackedScene" id=11]
+[ext_resource path="res://src/sonidos/arthur-vyncke-unburdening-feelings.mp3" type="AudioStream" id=12]
 
 [node name="escenario2" type="Node2D" groups=[
 "main",
 ]]
 script = ExtResource( 1 )
 vidax = ExtResource( 3 )
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="CanvasLayer"]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="CanvasLayer/ParallaxBackground"]
+motion_scale = Vector2( 0, 0 )
+
+[node name="Sprite" type="Sprite" parent="CanvasLayer/ParallaxBackground/ParallaxLayer"]
+texture = ExtResource( 6 )
 
 [node name="personaje" parent="." instance=ExtResource( 5 )]
 
@@ -20,12 +36,52 @@ vidax = ExtResource( 3 )
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = ExtResource( 2 )
 format = 1
-tile_data = PoolIntArray( 327681, 1, 0, 327685, 0, 0, 327689, 0, 0, 327693, 0, 0, 327697, 0, 0, 327701, 0, 0, 327705, 2, 0 )
+tile_data = PoolIntArray( 327731, 0, 0, 327733, 1, 0, 327735, 1, 0, 327737, 1, 0, 327739, 1, 0, 327741, 2, 0, 458801, 0, 0, 458803, 4, 0, 458805, 5, 0, 458807, 5, 0, 458809, 5, 0, 458811, 5, 0, 458813, 6, 0, 458815, 2, 0, 589818, 3, 0, 589820, 1, 0, 589822, 9, 0, 524288, 10, 0, 524290, 10, 0, 524292, 10, 0, 524294, 10, 0, 524296, 10, 0, 524298, 10, 0, 524300, 10, 0, 524302, 11, 0, 524304, 7, 0, 589871, 0, 0, 589873, 4, 0, 589875, 5, 0, 589877, 5, 0, 589879, 5, 0, 589881, 5, 0, 589883, 5, 0, 589885, 5, 0, 589887, 6, 0, 589889, 2, 0, 589905, 3, 0, 589907, 9, 0, 589909, 10, 0, 589911, 10, 0, 589913, 10, 0, 589915, 10, 0, 589917, 10, 0, 589919, 10, 0, 589921, 11, 0, 589923, 7, 0, 720890, 8, 0, 720892, 5, 0, 720894, 5, 0, 655360, 5, 0, 655362, 5, 0, 655364, 5, 0, 655366, 5, 0, 655368, 5, 0, 655370, 5, 0, 655372, 5, 0, 655374, 5, 0, 655376, 12, 0, 720917, 3, 0, 720919, 1, 0, 720921, 1, 0, 720923, 1, 0, 720925, 1, 0, 720927, 1, 0, 720929, 7, 0, 720941, 0, 0, 720943, 4, 0, 720945, 5, 0, 720947, 5, 0, 720949, 5, 0, 720951, 5, 0, 720953, 5, 0, 720955, 5, 0, 720957, 5, 0, 720959, 5, 0, 720961, 6, 0, 720963, 2, 0, 720977, 8, 0, 720979, 5, 0, 720981, 5, 0, 720983, 5, 0, 720985, 5, 0, 720987, 5, 0, 720989, 5, 0, 720991, 5, 0, 720993, 5, 0, 720995, 12, 0, 851962, 8, 0, 851964, 5, 0, 851966, 5, 0, 786432, 5, 0, 786434, 5, 0, 786436, 5, 0, 786438, 5, 0, 786440, 5, 0, 786442, 5, 0, 786444, 5, 0, 786446, 5, 0, 786448, 12, 0, 851989, 8, 0, 851991, 5, 0, 851993, 5, 0, 851995, 5, 0, 851997, 5, 0, 851999, 5, 0, 852001, 12, 0, 852009, 3, 0, 852011, 1, 0, 852013, 4, 0, 852015, 5, 0, 852017, 5, 0, 852019, 5, 0, 852021, 5, 0, 852023, 5, 0, 852025, 5, 0, 852027, 5, 0, 852029, 5, 0, 852031, 5, 0, 852033, 5, 0, 852035, 6, 0, 852037, 1, 0, 852039, 1, 0, 852041, 1, 0, 852043, 1, 0, 852045, 7, 0, 852049, 8, 0, 852051, 5, 0, 852053, 5, 0, 852055, 5, 0, 852057, 5, 0, 852059, 5, 0, 852061, 5, 0, 852063, 5, 0, 852065, 5, 0, 852067, 12, 0, 983061, 8, 0, 983063, 5, 0, 983065, 5, 0, 983067, 5, 0, 983069, 5, 0, 983071, 5, 0, 983073, 12, 0, 983081, 8, 0, 983083, 5, 0, 983085, 5, 0, 983087, 5, 0, 983089, 5, 0, 983091, 5, 0, 983093, 5, 0, 983095, 5, 0, 983097, 5, 0, 983099, 5, 0, 983101, 5, 0, 983103, 5, 0, 983105, 5, 0, 983107, 5, 0, 983109, 5, 0, 983111, 5, 0, 983113, 5, 0, 983115, 5, 0, 983117, 12, 0, 983121, 8, 0, 983123, 5, 0, 983125, 5, 0, 983127, 5, 0, 983129, 5, 0, 983131, 5, 0, 983133, 5, 0, 983135, 5, 0, 983137, 5, 0, 983139, 12, 0, 1114153, 8, 0, 1114155, 5, 0, 1114157, 5, 0, 1114159, 5, 0, 1114161, 5, 0, 1114163, 5, 0, 1114165, 5, 0, 1114167, 5, 0, 1114169, 5, 0, 1114171, 5, 0, 1114173, 5, 0, 1114175, 5, 0, 1114177, 5, 0, 1114179, 5, 0, 1114181, 5, 0, 1114183, 5, 0, 1114185, 5, 0, 1114187, 5, 0, 1114189, 12, 0, 1114193, 8, 0, 1114195, 5, 0, 1114197, 5, 0, 1114199, 5, 0, 1114201, 5, 0, 1114203, 5, 0, 1114205, 5, 0, 1114207, 5, 0, 1114209, 5, 0, 1114211, 12, 0 )
 
-[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+[node name="portal" parent="." instance=ExtResource( 7 )]
+position = Vector2( 6278.25, 502.611 )
+siguiente_escena = "res://tscn/escenario3.tscn"
 
-[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
-motion_scale = Vector2( 0, 0 )
+[node name="Recompensas" type="Node" parent="."]
 
-[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
-texture = ExtResource( 6 )
+[node name="moneda" parent="Recompensas" instance=ExtResource( 9 )]
+position = Vector2( 1056.17, 447.357 )
+
+[node name="moneda2" parent="Recompensas" instance=ExtResource( 9 )]
+position = Vector2( 1424.27, 658.101 )
+
+[node name="moneda3" parent="Recompensas" instance=ExtResource( 9 )]
+position = Vector2( 2144.35, 648.391 )
+
+[node name="vidaMas" parent="Recompensas" instance=ExtResource( 11 )]
+position = Vector2( 4775.86, 761.092 )
+
+[node name="trampas" type="Node" parent="."]
+
+[node name="fuego" parent="trampas" instance=ExtResource( 10 )]
+position = Vector2( 918.174, 462.454 )
+
+[node name="fuego2" parent="trampas" instance=ExtResource( 10 )]
+position = Vector2( -223.446, 466.691 )
+
+[node name="fuego3" parent="trampas" instance=ExtResource( 10 )]
+position = Vector2( 4477.4, 789.131 )
+
+[node name="fuego4" parent="trampas" instance=ExtResource( 10 )]
+position = Vector2( 5392.4, 527.017 )
+
+[node name="Enemigos" type="Node" parent="."]
+
+[node name="enemigo" parent="Enemigos" instance=ExtResource( 8 )]
+position = Vector2( 1779.9, 567.872 )
+
+[node name="enemigo2" parent="Enemigos" instance=ExtResource( 8 )]
+position = Vector2( 3703.88, 186.465 )
+
+[node name="ost" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 12 )
+autoplay = true
+
+[node name="sonidoMoneda" type="AudioStreamPlayer" parent="." groups=[
+"monedafx",
+]]

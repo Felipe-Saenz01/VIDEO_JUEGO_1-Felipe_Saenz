@@ -73,7 +73,6 @@ func _physics_process(delta):
 		if objcol.is_in_group("enemigo"):
 			quitar_vidas()
 	
-	
 	movimiento=move_and_slide(movimiento,UP)
 
 

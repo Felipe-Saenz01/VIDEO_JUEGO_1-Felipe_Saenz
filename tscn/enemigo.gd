@@ -2,7 +2,7 @@ extends KinematicBody2D
 
 var movimiento=Vector2()
 var UP=Vector2(0,-1)
-var gravedad=180
+var gravedad=200
 var velocidad=250
 var direccion= -1
 var enTierra= false

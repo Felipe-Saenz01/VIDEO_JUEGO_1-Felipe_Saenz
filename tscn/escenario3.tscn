@@ -1,0 +1,88 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://src/BG.png" type="Texture" id=1]
+[ext_resource path="res://tscn/gui.tscn" type="PackedScene" id=2]
+[ext_resource path="res://personaje/personaje.tscn" type="PackedScene" id=3]
+[ext_resource path="res://src/suelo/suelo2/suelo2.tres" type="TileSet" id=4]
+[ext_resource path="res://src/sonidos/arthur-vyncke-unburdening-feelings.mp3" type="AudioStream" id=5]
+[ext_resource path="res://src/sonidos/yt1s.com - Efecto de Sonido Moneda .mp3" type="AudioStream" id=6]
+[ext_resource path="res://tscn/enemigo.tscn" type="PackedScene" id=7]
+[ext_resource path="res://tscn/moneda.tscn" type="PackedScene" id=8]
+[ext_resource path="res://tscn/fuego.tscn" type="PackedScene" id=9]
+[ext_resource path="res://tscn/TrofeoFinal.tscn" type="PackedScene" id=10]
+[ext_resource path="res://tscn/escenario3.gd" type="Script" id=11]
+[ext_resource path="res://tscn/vida.tscn" type="PackedScene" id=12]
+
+[node name="escenario3" type="Node2D" groups=[
+"main",
+]]
+script = ExtResource( 11 )
+vidax = ExtResource( 12 )
+
+[node name="gui" parent="." instance=ExtResource( 2 )]
+
+[node name="personaje" parent="." instance=ExtResource( 3 )]
+position = Vector2( 237.32, 199.179 )
+
+[node name="TileMap" type="TileMap" parent="."]
+position = Vector2( 237.32, 199.179 )
+scale = Vector2( 0.5, 0.5 )
+tile_set = ExtResource( 4 )
+format = 1
+tile_data = PoolIntArray( -65479, 3, 0, -65477, 9, 0, -65475, 10, 0, -65473, 10, 0, -65472, 10, 0, -65470, 10, 0, -65468, 10, 0, -65466, 10, 0, -65464, 10, 0, -65462, 11, 0, -65460, 7, 0, 458791, 0, 0, 458793, 9, 0, 458795, 10, 0, 458797, 10, 0, 458799, 10, 0, 458801, 11, 0, 458803, 2, 0, 589861, 0, 0, 589863, 4, 0, 589865, 5, 0, 589867, 5, 0, 589869, 5, 0, 589871, 5, 0, 589873, 5, 0, 589875, 6, 0, 589877, 2, 0, 720888, 3, 0, 720890, 9, 0, 720892, 10, 0, 720894, 10, 0, 655360, 10, 0, 655362, 10, 0, 655364, 10, 0, 655366, 10, 0, 655368, 10, 0, 655370, 10, 0, 655372, 10, 0, 655374, 10, 0, 655376, 10, 0, 655378, 11, 0, 655380, 7, 0, 720931, 0, 0, 720933, 4, 0, 720935, 5, 0, 720937, 5, 0, 720939, 5, 0, 720941, 5, 0, 720943, 5, 0, 720945, 5, 0, 720947, 5, 0, 720949, 6, 0, 720951, 2, 0, 851960, 8, 0, 851962, 5, 0, 851964, 5, 0, 851966, 5, 0, 786432, 5, 0, 786434, 5, 0, 786436, 5, 0, 786438, 5, 0, 786440, 5, 0, 786442, 5, 0, 786444, 5, 0, 786446, 5, 0, 786448, 5, 0, 786450, 5, 0, 786452, 12, 0, 786513, 3, 0, 786515, 9, 0, 786517, 10, 0, 786519, 10, 0, 786521, 10, 0, 786523, 10, 0, 786525, 11, 0, 786527, 7, 0, 851991, 3, 0, 851993, 1, 0, 851995, 1, 0, 851997, 1, 0, 851999, 1, 0, 852001, 1, 0, 852003, 4, 0, 852005, 5, 0, 852007, 5, 0, 852009, 5, 0, 852011, 5, 0, 852013, 5, 0, 852015, 5, 0, 852017, 5, 0, 852019, 5, 0, 852021, 5, 0, 852023, 6, 0, 852025, 2, 0, 983032, 8, 0, 983034, 5, 0, 983036, 5, 0, 983038, 5, 0, 917504, 5, 0, 917506, 5, 0, 917508, 5, 0, 917510, 5, 0, 917512, 5, 0, 917514, 5, 0, 917516, 5, 0, 917518, 5, 0, 917520, 5, 0, 917522, 5, 0, 917524, 12, 0, 917585, 8, 0, 917587, 5, 0, 917589, 5, 0, 917591, 5, 0, 917593, 5, 0, 917595, 5, 0, 917597, 5, 0, 917599, 12, 0, 983063, 8, 0, 983065, 5, 0, 983067, 5, 0, 983069, 5, 0, 983071, 5, 0, 983073, 5, 0, 983075, 5, 0, 983077, 5, 0, 983079, 5, 0, 983081, 5, 0, 983083, 5, 0, 983085, 5, 0, 983087, 5, 0, 983089, 5, 0, 983091, 5, 0, 983093, 5, 0, 983095, 5, 0, 983097, 6, 0, 983099, 1, 0, 983101, 1, 0, 983103, 1, 0, 983105, 1, 0, 983107, 1, 0, 983109, 1, 0, 983111, 1, 0, 983113, 1, 0, 983115, 7, 0, 1114104, 8, 0, 1114106, 5, 0, 1114108, 5, 0, 1114110, 5, 0, 1048576, 5, 0, 1048578, 5, 0, 1048580, 5, 0, 1048582, 5, 0, 1048584, 5, 0, 1048586, 5, 0, 1048588, 5, 0, 1048590, 5, 0, 1048592, 5, 0, 1048594, 5, 0, 1048596, 12, 0, 1048657, 8, 0, 1048659, 5, 0, 1048661, 5, 0, 1048663, 5, 0, 1048665, 5, 0, 1048667, 5, 0, 1048669, 5, 0, 1048671, 12, 0, 1114135, 8, 0, 1114137, 5, 0, 1114139, 5, 0, 1114141, 5, 0, 1114143, 5, 0, 1114145, 5, 0, 1114147, 5, 0, 1114149, 5, 0, 1114151, 5, 0, 1114153, 5, 0, 1114155, 5, 0, 1114157, 5, 0, 1114159, 5, 0, 1114161, 5, 0, 1114163, 5, 0, 1114165, 5, 0, 1114167, 5, 0, 1114169, 5, 0, 1114171, 5, 0, 1114173, 5, 0, 1114175, 5, 0, 1114177, 5, 0, 1114179, 5, 0, 1114181, 5, 0, 1114183, 5, 0, 1114185, 5, 0, 1114187, 12, 0, 1245176, 8, 0, 1245178, 5, 0, 1245180, 5, 0, 1245182, 5, 0, 1179648, 5, 0, 1179650, 5, 0, 1179652, 5, 0, 1179654, 5, 0, 1179656, 5, 0, 1179658, 5, 0, 1179660, 5, 0, 1179662, 5, 0, 1179664, 5, 0, 1179666, 5, 0, 1179668, 12, 0, 1179729, 8, 0, 1179731, 5, 0, 1179733, 5, 0, 1179735, 5, 0, 1179737, 5, 0, 1179739, 5, 0, 1179741, 5, 0, 1179743, 12, 0, 1245207, 8, 0, 1245209, 5, 0, 1245211, 5, 0, 1245213, 5, 0, 1245215, 5, 0, 1245217, 5, 0, 1245219, 5, 0, 1245221, 5, 0, 1245223, 5, 0, 1245225, 5, 0, 1245227, 5, 0, 1245229, 5, 0, 1245231, 5, 0, 1245233, 5, 0, 1245235, 5, 0, 1245237, 5, 0, 1245239, 5, 0, 1245241, 5, 0, 1245243, 5, 0, 1245245, 5, 0, 1245247, 5, 0, 1245249, 5, 0, 1245251, 5, 0, 1245253, 5, 0, 1245255, 5, 0, 1245257, 5, 0, 1245259, 12, 0, 1310801, 8, 0, 1310803, 5, 0, 1310805, 5, 0, 1310807, 5, 0, 1310809, 5, 0, 1310811, 5, 0, 1310813, 5, 0, 1310815, 12, 0 )
+
+[node name="ost" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 5 )
+autoplay = true
+
+[node name="sonidoMoneda" type="AudioStreamPlayer" parent="." groups=[
+"monedafx",
+]]
+stream = ExtResource( 6 )
+
+[node name="Recompensas" type="Node" parent="."]
+
+[node name="moneda" parent="Recompensas" instance=ExtResource( 8 )]
+position = Vector2( 1117.55, 583.314 )
+
+[node name="moneda2" parent="Recompensas" instance=ExtResource( 8 )]
+position = Vector2( 2205.85, 123.759 )
+
+[node name="moneda3" parent="Recompensas" instance=ExtResource( 8 )]
+position = Vector2( 2535.57, 130.363 )
+
+[node name="moneda4" parent="Recompensas" instance=ExtResource( 8 )]
+position = Vector2( 2308.72, 643.722 )
+
+[node name="Trampas" type="Node" parent="."]
+
+[node name="fuego" parent="Trampas" instance=ExtResource( 9 )]
+position = Vector2( 37.2742, 473.098 )
+
+[node name="fuego2" parent="Trampas" instance=ExtResource( 9 )]
+position = Vector2( 874.807, 471.416 )
+
+[node name="fuego3" parent="Trampas" instance=ExtResource( 9 )]
+position = Vector2( 2622.19, 631.187 )
+
+[node name="Enemigos" type="Node" parent="."]
+
+[node name="enemigo" parent="Enemigos" instance=ExtResource( 7 )]
+position = Vector2( 1736, 294 )
+
+[node name="enemigo2" parent="Enemigos" instance=ExtResource( 7 )]
+position = Vector2( 2366.73, 37.0051 )
+
+[node name="TrofeoFinal" parent="." instance=ExtResource( 10 )]
+position = Vector2( 3096.14, 517.685 )
+siguiente_escena = "res://tscn/Victoria.tscn"
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="CanvasLayer"]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="CanvasLayer/ParallaxBackground"]
+motion_scale = Vector2( 0, 0 )
+
+[node name="Sprite" type="Sprite" parent="CanvasLayer/ParallaxBackground/ParallaxLayer"]
+texture = ExtResource( 1 )
